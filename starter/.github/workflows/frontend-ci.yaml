@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - "starter/frontend/**"
-      - "starter/.github/workflows/frontend-ci.yaml"
+      - ".github/workflows/frontend-ci.yaml"
 
   workflow_dispatch:
 
@@ -16,10 +16,6 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: starter/frontend
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -32,9 +28,11 @@ jobs:
           cache-dependency-path: starter/frontend/package-lock.json
 
       - name: Install dependencies
+        working-directory: starter/frontend
         run: npm ci
 
       - name: Run lint
+        working-directory: starter/frontend
         run: npm run lint
 
 
@@ -42,10 +40,6 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: starter/frontend
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -58,9 +52,11 @@ jobs:
           cache-dependency-path: starter/frontend/package-lock.json
 
       - name: Install dependencies
+        working-directory: starter/frontend
         run: npm ci
 
       - name: Run tests
+        working-directory: starter/frontend
         run: npm run test -- --watchAll=false
 
 
