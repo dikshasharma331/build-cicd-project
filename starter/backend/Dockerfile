@@ -8,9 +8,9 @@ RUN apt-get update && \
     apt-get install -y \
     build-essential \
     gcc \
-    libpcre3-dev \
+    libpcre2-dev \
     libffi-dev \
-    openssl \
+    libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache-dir pipenv
