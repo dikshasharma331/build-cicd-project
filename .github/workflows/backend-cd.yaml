@@ -71,6 +71,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Configure AWS credentials for ECR authentication
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -101,6 +102,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Configure AWS credentials for EKS deployment
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
