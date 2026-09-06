@@ -130,3 +130,9 @@ jobs:
           cd starter/frontend/k8s
           kustomize edit set image frontend=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           kubectl apply -k .
+
+      - name: Verify service and display URL
+        run: |
+          kubectl get svc frontend -o wide
+          URL=$(kubectl get svc frontend -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+          echo "Frontend LoadBalancer URL: http://$URL"

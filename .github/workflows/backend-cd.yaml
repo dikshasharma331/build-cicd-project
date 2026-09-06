@@ -132,3 +132,9 @@ jobs:
           cd starter/backend/k8s
           kustomize edit set image backend=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           kubectl apply -k .
+
+      - name: Verify service and display URL
+        run: |
+          kubectl get svc backend -o wide
+          URL=$(kubectl get svc backend -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+          echo "Backend /movies URL: http://$URL/movies"
