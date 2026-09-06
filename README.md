@@ -2,6 +2,14 @@
 
 You've been brought on as the DevOps resource for a development team that manages a web application that is a catalog of Movie Picture movies. They're in dire need of automating their development workflows in hopes of accelerating their release cycle. They'd like to use GitHub Actions to automate testing, building and deploying their applications to a Kubernetes cluster.
 
+## Project Links
+
+- **GitHub Repository**: https://github.com/dikshasharma331/build-cicd-project
+- **Frontend**: http://a1b2ba0ada7bf44bb9e3a3748c2bd7ea-301045587.us-east-1.elb.amazonaws.com
+- **Backend /movies**: http://a1b2914772400482da06e03ad20893aa-609970314.us-east-1.elb.amazonaws.com/movies
+
+---
+
 The team's project is comprised of 2 applications:
 
 1. A frontend UI written in TypeScript, using the React framework.
